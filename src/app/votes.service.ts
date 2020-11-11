@@ -28,15 +28,15 @@ export class VotesService {
   }
 
   variants(): Observable<Variants> {
-    return this.http.get<Variants>('/api/variants');
+    return this.http.get<Variants>('api/variants');
   }
 
   stat(): Observable<any> {
-    return this.http.get<Stat>('/api/stat');
+    return this.http.get<Stat>('api/stat');
   }
 
   vote(value: number): Observable<any> {
-    return this.http.post('/api/vote', {value},
+    return this.http.post('api/vote', {value},
       {responseType: 'text'});
   }
 }

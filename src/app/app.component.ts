@@ -12,7 +12,7 @@ import {Answers, Stat, VotesService} from './votes.service';
 })
 export class AppComponent implements OnInit {
   question = 'angularHW';
-  selectedAnswer: number;
+  selectedAnswer: number = null;
   answers: Answers[];
   stat: Stat;
   disable = false;
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
   }
 
   vote(): void {
-    if (this.selectedAnswer) {
+    if (this.selectedAnswer !== null) {
       this.votesService.vote(this.selectedAnswer)
         .pipe(
           mergeMap(res => this.votesService.stat()),
