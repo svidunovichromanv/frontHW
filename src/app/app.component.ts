@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   answers: Answers[];
   stat: Stat;
   disable = false;
+  fileValue;
 
   constructor(@Self() private destroy$: DestroyerService,
               private votesService: VotesService) {
@@ -48,4 +49,26 @@ export class AppComponent implements OnInit {
         });
     }
   }
+
+  getJSON(): void {
+    this.votesService.stateFiles('application/json')
+      .subscribe((v) => {
+        this.fileValue = JSON.stringify(v);
+      });
+  }
+
+  getHTML(): void {
+    this.votesService.stateFiles('text/html')
+      .subscribe((v) => {
+        this.fileValue = v;
+      });
+  }
+
+  getXML(): void {
+    this.votesService.stateFiles('application/xml')
+      .subscribe((v) => {
+        this.fileValue = v;
+      });
+  }
+
 }

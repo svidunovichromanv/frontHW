@@ -13,10 +13,10 @@ export interface Answers {
 }
 
 export interface Stat {
-  '0': number;
-  '1': number;
-  '2': number;
-  '3': number;
+  'winter': number;
+  'spring': number;
+  'summer': number;
+  'autumn': number;
 }
 
 @Injectable({
@@ -38,5 +38,10 @@ export class VotesService {
   vote(value: number): Observable<any> {
     return this.http.post('api/vote', {value},
       {responseType: 'text'});
+  }
+
+  stateFiles(format): Observable<any> {
+    const responseType = format === 'text/html' || format === 'application/xml' ? 'text' : 'json';
+    return this.http.get('api/file-state', {responseType: responseType as any, headers: {Accept: format}});
   }
 }

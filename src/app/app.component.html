@@ -19,20 +19,24 @@
    margin-bottom: 50px"
   mat-raised-button
   color="primary"
+  (click)="getXML()"
 >{{'XML'}}</button>
 <button
   style="width: 200px;
    margin-bottom: 50px"
   mat-raised-button
   color="primary"
+  (click)="getHTML()"
 >{{'HTML'}}</button>
 <button
   style="width: 200px;
    margin-bottom: 50px"
   mat-raised-button
   color="primary"
+  (click)="getJSON()"
 >{{'JSON'}}</button>
 <ng-container *ngIf="stat">
   <p *ngFor="let answer of answers">{{answer.label + ' : ' + stat[answer.value]}}</p>
 </ng-container>
+<textarea style="width: 300px; height: 200px" [(ngModel)]="fileValue"></textarea>
 
