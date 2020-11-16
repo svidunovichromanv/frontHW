@@ -1,0 +1,21 @@
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #003163;
+  font-family: Muli;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px auto;
+}
+
+.example-radio-button {
+  margin: 5px;
+}

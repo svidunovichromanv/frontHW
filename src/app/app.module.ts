@@ -7,10 +7,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { VotesComponent } from './votes/votes.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VotesComponent
   ],
   imports: [
     BrowserModule,
