@@ -10,11 +10,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { VotesComponent } from './votes/votes.component';
 import {MatSelectModule} from '@angular/material/select';
+import { PostmanComponent } from './postman/postman.component';
+import { FileStorageComponent } from './file-storage/file-storage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VotesComponent
+    VotesComponent,
+    PostmanComponent,
+    FileStorageComponent
   ],
   imports: [
     BrowserModule,

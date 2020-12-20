@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class RequestService {
+export class PostmanService {
 
   constructor(private http: HttpClient) {
   }

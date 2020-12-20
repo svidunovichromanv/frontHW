@@ -1,0 +1,26 @@
+<p *ngIf="uploadProgress$ | async as uploadProgress; else FG">{{uploadProgress}}</p>
+<ng-template #FG>
+  <div class="form-group">
+    <label for="file">Choose File</label>
+    <input type="file"
+           id="file"
+           (change)="handleFileInput($event.target.files)">
+    <textarea [(ngModel)]="description"></textarea>
+    <button
+      style="width: 100px"
+      mat-raised-button
+      (click)="uploadFileToActivity()">GO!
+    </button>
+  </div>
+</ng-template>
+
+<ng-container *ngIf="files$ | async as files">
+  <div class="files" *ngFor="let file of files">
+    <div class="file-user-name">{{file.userName}}</div>
+    <div class="file-description">{{file.description}}</div>
+    <button
+      style="min-width: 100px"
+      mat-raised-button
+      (click)="download(file.storageName, file.userName)">{{'download' | uppercase}}</button>
+  </div>
+</ng-container>
